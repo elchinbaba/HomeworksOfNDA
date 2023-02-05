@@ -7,11 +7,11 @@ namespace Homework3PrimesOfNumber
     {
         static void Main(string[] args)
         {
-            FileStream filestream = new FileStream("out.txt", FileMode.Create);
-            var streamwriter = new StreamWriter(filestream);
-            streamwriter.AutoFlush = true;
-            Console.SetOut(streamwriter);
-            Console.SetError(streamwriter);
+            //FileStream filestream = new FileStream("out.txt", FileMode.Create);
+            //var streamwriter = new StreamWriter(filestream);
+            //streamwriter.AutoFlush = true;
+            //Console.SetOut(streamwriter);
+            //Console.SetError(streamwriter);
 
             int number = 5354167;
             
@@ -39,6 +39,8 @@ namespace Homework3PrimesOfNumber
             int countPrimes = 0;
             bool isCheckingNumberPrime;
             int limitForCheckingPrimeness;
+            int[] primes = null;
+            int[] copyPrimes;
 
             int lengthOfCheckingNumber = 1;
             int checkingNumber;
@@ -86,10 +88,45 @@ namespace Homework3PrimesOfNumber
                         j++;
                     }
 
-                    if (isCheckingNumberPrime)
+                    if (isCheckingNumberPrime && checkingNumber > 1)
                     {
-                        countPrimes++;
-                        //Console.WriteLine(checkingNumber);
+                        if (primes == null)
+                        {
+                            countPrimes = 1;
+                            primes = new int[1];
+                            primes[0] = checkingNumber;
+                        }
+                        else
+                        {
+                            k = 0;
+                            while (k < primes.Length)
+                            {
+                                if (primes[k] == checkingNumber)
+                                {
+                                    break;
+                                }
+
+                                k++;
+                            }
+
+                            if (k == primes.Length)
+                            {
+                                countPrimes++;
+
+                                copyPrimes = primes;
+                                primes = new int[countPrimes];
+                                k = 0;
+                                while (k < copyPrimes.Length)
+                                {
+                                    primes[k] = copyPrimes[k];
+
+                                    k++;
+                                }
+                                primes[countPrimes - 1] = checkingNumber;
+
+                                Console.WriteLine(checkingNumber);
+                            }
+                        }
                     }
                 }
 
@@ -181,33 +218,71 @@ namespace Homework3PrimesOfNumber
                     //Console.WriteLine("\n");
 
                     // calculation of the number based on the current indices
-                    checkingNumber = 0;
-                    i = 0;
-                    while (i < lengthOfCheckingNumber)
                     {
-                        checkingNumber += (int)Math.Pow(10, lengthOfCheckingNumber - i - 1) * digitsInNumber[digitsInCheckingNumber[i]];
-
-                        i++;
-                    }
-                    //Console.WriteLine("checkingNumber {0}\n", checkingNumber);
-
-                    isCheckingNumberPrime = true;
-                    limitForCheckingPrimeness = (int)Math.Ceiling(Math.Sqrt(checkingNumber));
-                    j = 2;
-                    while (j <= limitForCheckingPrimeness)
-                    {
-                        if (checkingNumber % j == 0)
+                        checkingNumber = 0;
+                        i = 0;
+                        while (i < lengthOfCheckingNumber)
                         {
-                            isCheckingNumberPrime = false;
-                            break;
+                            checkingNumber += (int)Math.Pow(10, lengthOfCheckingNumber - i - 1) * digitsInNumber[digitsInCheckingNumber[i]];
+
+                            i++;
+                        }
+                        //Console.WriteLine("checkingNumber {0}\n", checkingNumber);
+
+                        isCheckingNumberPrime = true;
+                        limitForCheckingPrimeness = (int)Math.Ceiling(Math.Sqrt(checkingNumber));
+                        j = 2;
+                        while (j <= limitForCheckingPrimeness)
+                        {
+                            if (checkingNumber % j == 0)
+                            {
+                                isCheckingNumberPrime = false;
+                                break;
+                            }
+
+                            j++;
                         }
 
-                        j++;
-                    }
+                        if (isCheckingNumberPrime && checkingNumber > 1)
+                        {
+                            if (primes == null)
+                            {
+                                countPrimes = 1;
+                                primes = new int[1];
+                                primes[0] = checkingNumber;
+                            }
+                            else
+                            {
+                                k = 0;
+                                while (k < primes.Length)
+                                {
+                                    if (primes[k] == checkingNumber)
+                                    {
+                                        break;
+                                    }
 
-                    if (isCheckingNumberPrime)
-                    {
-                        countPrimes++;
+                                    k++;
+                                }
+
+                                if (k == primes.Length)
+                                {
+                                    countPrimes++;
+
+                                    copyPrimes = primes;
+                                    primes = new int[countPrimes];
+                                    k = 0;
+                                    while (k < copyPrimes.Length)
+                                    {
+                                        primes[k] = copyPrimes[k];
+
+                                        k++;
+                                    }
+                                    primes[countPrimes - 1] = checkingNumber;
+
+                                    Console.WriteLine(checkingNumber);
+                                }
+                            }
+                        }
                     }
                 }
 
