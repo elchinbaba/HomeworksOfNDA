@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.33130.400
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework2WhileLoop", "Homework1WhileLoop\Homework2WhileLoop.csproj", "{0615EE38-38A8-4549-983F-C23F658B30A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework3PrimesOfNumber", "Homework3PrimesOfNumber\Homework3PrimesOfNumber.csproj", "{7A9DC7F7-2BF1-4E33-AE1F-6AD3465537E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework3PrimesOfNumber", "Homework3PrimesOfNumber\Homework3PrimesOfNumber.csproj", "{7A9DC7F7-2BF1-4E33-AE1F-6AD3465537E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework4PalindromeArray", "Homework4PalindromeArray\Homework4PalindromeArray.csproj", "{C6E72E6D-174E-4133-8EAF-917239297EDD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{7A9DC7F7-2BF1-4E33-AE1F-6AD3465537E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A9DC7F7-2BF1-4E33-AE1F-6AD3465537E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A9DC7F7-2BF1-4E33-AE1F-6AD3465537E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6E72E6D-174E-4133-8EAF-917239297EDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6E72E6D-174E-4133-8EAF-917239297EDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6E72E6D-174E-4133-8EAF-917239297EDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6E72E6D-174E-4133-8EAF-917239297EDD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

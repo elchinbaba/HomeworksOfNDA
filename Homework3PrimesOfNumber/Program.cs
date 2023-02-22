@@ -124,7 +124,7 @@ namespace Homework3PrimesOfNumber
                                 }
                                 primes[countPrimes - 1] = checkingNumber;
 
-                                Console.WriteLine(checkingNumber);
+                                //Console.WriteLine(checkingNumber);
                             }
                         }
                     }
@@ -279,7 +279,7 @@ namespace Homework3PrimesOfNumber
                                     }
                                     primes[countPrimes - 1] = checkingNumber;
 
-                                    Console.WriteLine(checkingNumber);
+                                    //Console.WriteLine(checkingNumber);
                                 }
                             }
                         }
@@ -288,6 +288,8 @@ namespace Homework3PrimesOfNumber
 
                 lengthOfCheckingNumber++;
             }
+
+            Console.WriteLine(countPrimes);
         }
     }
 }
